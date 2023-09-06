@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		E5EBBC8F2AA848ED00118AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBC8E2AA848ED00118AAC /* AppDelegate.swift */; };
 		E5EBBC912AA848ED00118AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBC902AA848ED00118AAC /* SceneDelegate.swift */; };
-		E5EBBC932AA848ED00118AAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBC922AA848ED00118AAC /* ViewController.swift */; };
 		E5EBBC962AA848EE00118AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EBBC942AA848EE00118AAC /* Main.storyboard */; };
 		E5EBBC992AA848EE00118AAC /* zolivar_Exam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBC972AA848EE00118AAC /* zolivar_Exam.xcdatamodeld */; };
 		E5EBBC9B2AA848EE00118AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5EBBC9A2AA848EE00118AAC /* Assets.xcassets */; };
 		E5EBBC9E2AA848EE00118AAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EBBC9C2AA848EE00118AAC /* LaunchScreen.storyboard */; };
+		E5EBBCA92AA84DCA00118AAC /* mainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCA82AA84DCA00118AAC /* mainPage.swift */; };
+		E5EBBCAB2AA84F8E00118AAC /* loginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCAA2AA84F8E00118AAC /* loginPage.swift */; };
+		E5EBBCAD2AA84F9900118AAC /* registerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCAC2AA84F9900118AAC /* registerPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E5EBBC8B2AA848ED00118AAC /* zolivar_Exam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zolivar_Exam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5EBBC8E2AA848ED00118AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5EBBC902AA848ED00118AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5EBBC922AA848ED00118AAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5EBBC952AA848EE00118AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5EBBC982AA848EE00118AAC /* zolivar_Exam.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = zolivar_Exam.xcdatamodel; sourceTree = "<group>"; };
 		E5EBBC9A2AA848EE00118AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5EBBC9D2AA848EE00118AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5EBBC9F2AA848EE00118AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5EBBCA82AA84DCA00118AAC /* mainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainPage.swift; sourceTree = "<group>"; };
+		E5EBBCAA2AA84F8E00118AAC /* loginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPage.swift; sourceTree = "<group>"; };
+		E5EBBCAC2AA84F9900118AAC /* registerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +64,40 @@
 			children = (
 				E5EBBC8E2AA848ED00118AAC /* AppDelegate.swift */,
 				E5EBBC902AA848ED00118AAC /* SceneDelegate.swift */,
-				E5EBBC922AA848ED00118AAC /* ViewController.swift */,
-				E5EBBC942AA848EE00118AAC /* Main.storyboard */,
 				E5EBBC9A2AA848EE00118AAC /* Assets.xcassets */,
 				E5EBBC9C2AA848EE00118AAC /* LaunchScreen.storyboard */,
+				E5EBBC942AA848EE00118AAC /* Main.storyboard */,
+				E5EBBCA72AA84BC400118AAC /* ViewController */,
+				E5EBBCA62AA84BB300118AAC /* ViewModel */,
+				E5EBBCA52AA84B8300118AAC /* Model */,
 				E5EBBC9F2AA848EE00118AAC /* Info.plist */,
 				E5EBBC972AA848EE00118AAC /* zolivar_Exam.xcdatamodeld */,
 			);
 			path = zolivar_Exam;
+			sourceTree = "<group>";
+		};
+		E5EBBCA52AA84B8300118AAC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5EBBCA62AA84BB300118AAC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E5EBBCA72AA84BC400118AAC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E5EBBCA82AA84DCA00118AAC /* mainPage.swift */,
+				E5EBBCAA2AA84F8E00118AAC /* loginPage.swift */,
+				E5EBBCAC2AA84F9900118AAC /* registerPage.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5EBBC932AA848ED00118AAC /* ViewController.swift in Sources */,
+				E5EBBCA92AA84DCA00118AAC /* mainPage.swift in Sources */,
 				E5EBBC8F2AA848ED00118AAC /* AppDelegate.swift in Sources */,
+				E5EBBCAB2AA84F8E00118AAC /* loginPage.swift in Sources */,
+				E5EBBCAD2AA84F9900118AAC /* registerPage.swift in Sources */,
 				E5EBBC992AA848EE00118AAC /* zolivar_Exam.xcdatamodeld in Sources */,
 				E5EBBC912AA848ED00118AAC /* SceneDelegate.swift in Sources */,
 			);
