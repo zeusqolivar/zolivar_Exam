@@ -66,12 +66,16 @@ class mainPage: UIViewController {
             }
 
     @objc func loginButtonTapped() {
+
         let vc = loginPage()
-        navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 
-    @objc func registerButtonTapped() {        let vc = registerPage()
-        navigationController?.pushViewController(vc, animated: true)
+    @objc func registerButtonTapped() {
+        let vc = registerPage()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 }
 

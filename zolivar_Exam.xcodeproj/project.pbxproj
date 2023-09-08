@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E56BB3992AAB43BF00A552FB /* loginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BB3982AAB43BF00A552FB /* loginPageViewModel.swift */; };
+		E56BB39B2AAB7D6400A552FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BB39A2AAB7D6400A552FB /* User.swift */; };
+		E56BB39D2AABD2D500A552FB /* userPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BB39C2AABD2D500A552FB /* userPage.swift */; };
+		E56BB39F2AABD31E00A552FB /* GetRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BB39E2AABD31E00A552FB /* GetRewards.swift */; };
+		E56BB3A12AABD3E300A552FB /* userPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BB3A02AABD3E300A552FB /* userPageViewModel.swift */; };
 		E5EBBC8F2AA848ED00118AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBC8E2AA848ED00118AAC /* AppDelegate.swift */; };
 		E5EBBC912AA848ED00118AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBC902AA848ED00118AAC /* SceneDelegate.swift */; };
 		E5EBBC962AA848EE00118AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EBBC942AA848EE00118AAC /* Main.storyboard */; };
@@ -16,9 +21,16 @@
 		E5EBBCA92AA84DCA00118AAC /* mainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCA82AA84DCA00118AAC /* mainPage.swift */; };
 		E5EBBCAB2AA84F8E00118AAC /* loginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCAA2AA84F8E00118AAC /* loginPage.swift */; };
 		E5EBBCAD2AA84F9900118AAC /* registerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCAC2AA84F9900118AAC /* registerPage.swift */; };
+		E5EBBCB02AA899C800118AAC /* TextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCAF2AA899C800118AAC /* TextFieldExt.swift */; };
+		E5EBBCB32AAA368100118AAC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCB22AAA368100118AAC /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E56BB3982AAB43BF00A552FB /* loginPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPageViewModel.swift; sourceTree = "<group>"; };
+		E56BB39A2AAB7D6400A552FB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E56BB39C2AABD2D500A552FB /* userPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userPage.swift; sourceTree = "<group>"; };
+		E56BB39E2AABD31E00A552FB /* GetRewards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRewards.swift; sourceTree = "<group>"; };
+		E56BB3A02AABD3E300A552FB /* userPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userPageViewModel.swift; sourceTree = "<group>"; };
 		E5EBBC8B2AA848ED00118AAC /* zolivar_Exam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zolivar_Exam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5EBBC8E2AA848ED00118AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5EBBC902AA848ED00118AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +42,8 @@
 		E5EBBCA82AA84DCA00118AAC /* mainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainPage.swift; sourceTree = "<group>"; };
 		E5EBBCAA2AA84F8E00118AAC /* loginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPage.swift; sourceTree = "<group>"; };
 		E5EBBCAC2AA84F9900118AAC /* registerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerPage.swift; sourceTree = "<group>"; };
+		E5EBBCAF2AA899C800118AAC /* TextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExt.swift; sourceTree = "<group>"; };
+		E5EBBCB22AAA368100118AAC /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,14 +76,16 @@
 		E5EBBC8D2AA848ED00118AAC /* zolivar_Exam */ = {
 			isa = PBXGroup;
 			children = (
-				E5EBBC8E2AA848ED00118AAC /* AppDelegate.swift */,
-				E5EBBC902AA848ED00118AAC /* SceneDelegate.swift */,
-				E5EBBC9A2AA848EE00118AAC /* Assets.xcassets */,
-				E5EBBC9C2AA848EE00118AAC /* LaunchScreen.storyboard */,
-				E5EBBC942AA848EE00118AAC /* Main.storyboard */,
+				E5EBBCB12AA8DD5200118AAC /* Network */,
+				E5EBBCAE2AA899B200118AAC /* Extensions */,
 				E5EBBCA72AA84BC400118AAC /* ViewController */,
 				E5EBBCA62AA84BB300118AAC /* ViewModel */,
 				E5EBBCA52AA84B8300118AAC /* Model */,
+				E5EBBC902AA848ED00118AAC /* SceneDelegate.swift */,
+				E5EBBC8E2AA848ED00118AAC /* AppDelegate.swift */,
+				E5EBBC9A2AA848EE00118AAC /* Assets.xcassets */,
+				E5EBBC9C2AA848EE00118AAC /* LaunchScreen.storyboard */,
+				E5EBBC942AA848EE00118AAC /* Main.storyboard */,
 				E5EBBC9F2AA848EE00118AAC /* Info.plist */,
 				E5EBBC972AA848EE00118AAC /* zolivar_Exam.xcdatamodeld */,
 			);
@@ -79,6 +95,8 @@
 		E5EBBCA52AA84B8300118AAC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E56BB39A2AAB7D6400A552FB /* User.swift */,
+				E56BB39E2AABD31E00A552FB /* GetRewards.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -86,6 +104,8 @@
 		E5EBBCA62AA84BB300118AAC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E56BB3982AAB43BF00A552FB /* loginPageViewModel.swift */,
+				E56BB3A02AABD3E300A552FB /* userPageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -95,9 +115,26 @@
 			children = (
 				E5EBBCA82AA84DCA00118AAC /* mainPage.swift */,
 				E5EBBCAA2AA84F8E00118AAC /* loginPage.swift */,
+				E56BB39C2AABD2D500A552FB /* userPage.swift */,
 				E5EBBCAC2AA84F9900118AAC /* registerPage.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E5EBBCAE2AA899B200118AAC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5EBBCAF2AA899C800118AAC /* TextFieldExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E5EBBCB12AA8DD5200118AAC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E5EBBCB22AAA368100118AAC /* APIService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,12 +208,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EBBCB02AA899C800118AAC /* TextFieldExt.swift in Sources */,
 				E5EBBCA92AA84DCA00118AAC /* mainPage.swift in Sources */,
 				E5EBBC8F2AA848ED00118AAC /* AppDelegate.swift in Sources */,
 				E5EBBCAB2AA84F8E00118AAC /* loginPage.swift in Sources */,
+				E56BB39D2AABD2D500A552FB /* userPage.swift in Sources */,
 				E5EBBCAD2AA84F9900118AAC /* registerPage.swift in Sources */,
 				E5EBBC992AA848EE00118AAC /* zolivar_Exam.xcdatamodeld in Sources */,
+				E5EBBCB32AAA368100118AAC /* APIService.swift in Sources */,
+				E56BB3A12AABD3E300A552FB /* userPageViewModel.swift in Sources */,
+				E56BB39F2AABD31E00A552FB /* GetRewards.swift in Sources */,
 				E5EBBC912AA848ED00118AAC /* SceneDelegate.swift in Sources */,
+				E56BB39B2AAB7D6400A552FB /* User.swift in Sources */,
+				E56BB3992AAB43BF00A552FB /* loginPageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
