@@ -144,6 +144,34 @@ class NetworkService {
 
         task.resume()
     }
+
+    func getRewards(completion: @escaping (Result<Data, Error>) -> Void) {
+        let endpoint = "/getrewards" // Update the endpoint to match your API
+
+        guard let url = URL(string: "\(baseURL)\(endpoint)") else {
+            completion(.failure(NetworkError.invalidURL))
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST" // Use POST method for fetching rewards
+
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = data else {
+                completion(.failure(NetworkError.noData))
+                return
+            }
+
+            completion(.success(data))
+        }
+
+        task.resume()
+    }
 }
 
 // Define custom error types for networking errors

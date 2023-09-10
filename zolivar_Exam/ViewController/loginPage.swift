@@ -90,47 +90,39 @@ class loginPage: UIViewController {
             return
         }
 
-        loginViewModel.login(mobile:mobileNumber, mpin: mpin) { result in
-                   switch result {
-                   case .success(let data):
-                       // Handle login success (parse data, update UI, etc.)
-                       print("Login success. Data received: \(data)")
-                       do {
-                           let decoder = JSONDecoder()
-                           let loginResponse = try decoder.decode(LoginResponse.self, from: data)
-                           // Check if status is not nil
-                           if let status = loginResponse.status {
-                               print("Status: \(status)")
-                           }
-                           // Access other parsed data
-                           if let userData = loginResponse.data, let user = userData.user {
-                               if let id = user.id {
-                                   print("User ID: \(id)")
-                               }
-                               if let firstName = user.first_name {
-                                   print("First Name: \(firstName)")
-                               }
-                               if let lastName = user.last_name {
-                                   print("Last Name: \(lastName)")
-                               }
-                               if let mobile = user.mobile {
-                                   print("Mobile: \(mobile)")
-                               }
-                           }
-                           print("Message: \(loginResponse.message)")
-                       } catch {
-                           print("Error decoding JSON: \(error)")
-                       }
+        loginViewModel.login(mobile:"9123456789", mpin: "1234") { result in
+            switch result {
+            case .success(let data):
+                // Handle login success (parse data, update UI, etc.)
+                print("Login success. Data received: \(data)")
+                do {
+                    let decoder = JSONDecoder()
+                    let loginResponse = try decoder.decode(LoginResponse.self, from: data)
+                    switch loginResponse.status{
+                    case 200:
+                        if let status = loginResponse.status{
+                            print("Status Good")
+                        }
+                        DispatchQueue.main.async {
+                            let vc = userPage()
+                            vc.modalPresentationStyle = .fullScreen
+                            self.present(vc, animated: true,completion: nil)
+                        }
+                    case 404:
+                        print("404 Not Found")
+                    default: print("Unhandled Status Code")
+                    }
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                }
 
-                       let vc = userPage()
-                       vc.modalPresentationStyle = .fullScreen
-                       self.present(vc, animated: true, completion: nil)
 
-                   case .failure(let error):
-                       // Handle login failure (show alert, log error, etc.)
-                       print("Login failed with error: \(error)")
-                   }
-               }
+
+            case .failure(let error):
+                // Handle login failure (show alert, log error, etc.)
+                print("Login failed with error: \(error)")
+            }
+        }
     }
 
     @objc func backButtonTapped() {

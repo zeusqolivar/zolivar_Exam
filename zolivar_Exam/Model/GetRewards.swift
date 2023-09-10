@@ -7,19 +7,21 @@
 
 import Foundation
 
-struct DataListItem: Codable {
+struct RewardItem: Codable {
     let id: Int
     let name: String
-    let description: String
+    var description: String
     let image: String
+
+  
 }
 
 struct DataList: Codable {
-    let list: [DataListItem]
+    let list: [RewardItem]
 }
 
 struct ApiResponse: Codable {
-    let status: Int
-    let message: String
+    let status: Int?
+    let message: String?
     let data: DataList
 }

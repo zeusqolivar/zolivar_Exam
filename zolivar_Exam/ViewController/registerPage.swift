@@ -18,7 +18,6 @@ class registerPage: UIViewController {
     let mobileNumberTextField = UITextField()
     let mpinTextField = UITextField()
     let confirmMpinTextField = UITextField()
-
     let backButton = UIButton()
     let registerButton = UIButton()
 

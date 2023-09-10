@@ -12,6 +12,7 @@
 		E56BB39D2AABD2D500A552FB /* userPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BB39C2AABD2D500A552FB /* userPage.swift */; };
 		E56BB39F2AABD31E00A552FB /* GetRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BB39E2AABD31E00A552FB /* GetRewards.swift */; };
 		E56BB3A12AABD3E300A552FB /* userPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BB3A02AABD3E300A552FB /* userPageViewModel.swift */; };
+		E56BB3A32AABF9E600A552FB /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56BB3A22AABF9E600A552FB /* CollectionViewCell.swift */; };
 		E5EBBC8F2AA848ED00118AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBC8E2AA848ED00118AAC /* AppDelegate.swift */; };
 		E5EBBC912AA848ED00118AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBC902AA848ED00118AAC /* SceneDelegate.swift */; };
 		E5EBBC962AA848EE00118AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5EBBC942AA848EE00118AAC /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		E56BB39C2AABD2D500A552FB /* userPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userPage.swift; sourceTree = "<group>"; };
 		E56BB39E2AABD31E00A552FB /* GetRewards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRewards.swift; sourceTree = "<group>"; };
 		E56BB3A02AABD3E300A552FB /* userPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userPageViewModel.swift; sourceTree = "<group>"; };
+		E56BB3A22AABF9E600A552FB /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		E5EBBC8B2AA848ED00118AAC /* zolivar_Exam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zolivar_Exam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5EBBC8E2AA848ED00118AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5EBBC902AA848ED00118AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,9 +116,9 @@
 			isa = PBXGroup;
 			children = (
 				E5EBBCA82AA84DCA00118AAC /* mainPage.swift */,
+				E5EBBCAC2AA84F9900118AAC /* registerPage.swift */,
 				E5EBBCAA2AA84F8E00118AAC /* loginPage.swift */,
 				E56BB39C2AABD2D500A552FB /* userPage.swift */,
-				E5EBBCAC2AA84F9900118AAC /* registerPage.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -124,6 +126,7 @@
 		E5EBBCAE2AA899B200118AAC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E56BB3A22AABF9E600A552FB /* CollectionViewCell.swift */,
 				E5EBBCAF2AA899C800118AAC /* TextFieldExt.swift */,
 			);
 			path = Extensions;
@@ -218,6 +221,7 @@
 				E5EBBCB32AAA368100118AAC /* APIService.swift in Sources */,
 				E56BB3A12AABD3E300A552FB /* userPageViewModel.swift in Sources */,
 				E56BB39F2AABD31E00A552FB /* GetRewards.swift in Sources */,
+				E56BB3A32AABF9E600A552FB /* CollectionViewCell.swift in Sources */,
 				E5EBBC912AA848ED00118AAC /* SceneDelegate.swift in Sources */,
 				E56BB39B2AAB7D6400A552FB /* User.swift in Sources */,
 				E56BB3992AAB43BF00A552FB /* loginPageViewModel.swift in Sources */,
