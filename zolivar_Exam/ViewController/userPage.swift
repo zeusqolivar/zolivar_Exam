@@ -35,16 +35,14 @@ class userPage: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         layout.minimumInteritemSpacing = 0 // Add spacing between items (adjust as needed)
         // Calculate the item size based on the screen size
         let screenWidth = UIScreen.main.bounds.width
-        let itemWidth = screenWidth - 40 // 20 points spacing on both sides
-        let itemHeight = itemWidth // Make it square or adjust as needed
-        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
+        let itemWidth = screenWidth - 20 // 20 points spacing on both sides
+        layout.itemSize = CGSize(width: itemWidth, height: 200)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         // Configure collectionView properties and register cell class here
         return collectionView
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Title"
         // Configure labels
         configureLabels()
         // Configure and add the collectionView
@@ -126,7 +124,7 @@ class userPage: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: referralCodeLabel.bottomAnchor, constant: 20),
+            collectionView.topAnchor.constraint(equalTo: referralCodeLabel.bottomAnchor, constant: 0),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)

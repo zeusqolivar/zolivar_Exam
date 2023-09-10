@@ -23,6 +23,7 @@ class CollectionViewCell: UICollectionViewCell {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.imageView.image = image
+                        
                     }
                 }
             }.resume()
@@ -32,7 +33,9 @@ class CollectionViewCell: UICollectionViewCell {
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         // Configure imageView properties (e.g., content mode, background color, etc.)
-        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleToFill
         imageView.backgroundColor = .black
         imageView.sizeToFit()
         return imageView
@@ -60,23 +63,27 @@ class CollectionViewCell: UICollectionViewCell {
         private func configureUI() {
             // Add and configure the image view
             contentView.addSubview(imageView)
+            imageView.layer.cornerRadius = 10
             imageView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+                imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
                 imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
                 imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-                imageView.heightAnchor.constraint(equalToConstant: 200) // Adjust the height as needed
+                imageView.heightAnchor.constraint(equalToConstant: 150) // Adjust the height as needed
             ])
             // Add and configure the description label
             contentView.addSubview(descriptionLabel)
             descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
             contentView.layer.borderColor = UIColor.black.cgColor
-            contentView.layer.borderWidth = 3
+            contentView.layer.borderWidth = 0.5
+            contentView.layer.cornerRadius = 10
+
+
             NSLayoutConstraint.activate([
-                descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor), // Add spacing between image and label
-                descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-                descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-                descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+                descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 15), // Add spacing between image and label
+                descriptionLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 5),
+                descriptionLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor)
+
             ])
         }
 }

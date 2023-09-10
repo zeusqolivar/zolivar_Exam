@@ -21,7 +21,6 @@ class mainPage: UIViewController {
         // Calculate the button size based on available space
         let buttonWidth = min(view.bounds.width - 40, 200) // Maximum width of 200, but not wider than the available space
         let buttonHeight: CGFloat = 50
-
         // Create Login Button
         let loginButton = UIButton(type: .system)
         loginButton.setTitle("Login", for: .normal)
