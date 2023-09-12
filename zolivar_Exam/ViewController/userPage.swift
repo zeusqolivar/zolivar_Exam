@@ -11,6 +11,8 @@ class userPage: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     let mobileLabel = UILabel()
     let referralCodeLabel = UILabel()
     let userViewModel = userPageViewModel()
+    
+    
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -85,16 +87,8 @@ class userPage: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         }
     }
 
-    func parseLists(jsonData: Data) -> DataList? {
-        do {
-            // Parse JSON data into DataList
-            let dataResponse = try JSONDecoder().decode(DataList.self, from: jsonData)
-            return dataResponse
-        } catch {
-            print("Error parsing JSON: \(error)")
-            return nil
-        }
-    }
+
+
 
     private func configureLabels() {
         // Create a vertical stack view

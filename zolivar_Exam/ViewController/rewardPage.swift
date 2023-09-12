@@ -18,7 +18,7 @@ class rewardPage: UIViewController {
         required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-    
+
     // Lazy variables
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -71,8 +71,8 @@ class rewardPage: UIViewController {
             // Image view constraints
             imageView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 20),
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 120), // Adjust width as needed
-            imageView.heightAnchor.constraint(equalToConstant: 120), // Adjust height as needed
+            imageView.widthAnchor.constraint(equalToConstant: 400), // Adjust width as needed
+            imageView.heightAnchor.constraint(equalToConstant: 400), // Adjust height as needed
 
             // Name label constraints
             nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),

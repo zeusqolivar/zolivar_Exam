@@ -104,7 +104,7 @@ class NetworkService {
     }
 
     func getUserProfile(mobile: String, mpin: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        let endpoint = "/getUserProfile"
+        let endpoint = "/getuser"
 
         guard let url = URL(string: "\(baseURL)\(endpoint)") else {
             completion(.failure(NetworkError.invalidURL))

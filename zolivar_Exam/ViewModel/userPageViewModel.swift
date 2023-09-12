@@ -9,6 +9,7 @@ import Foundation
 
 class userPageViewModel {
 
+
     private let networkService: NetworkService
 
     init(networkService: NetworkService = NetworkService.shared) {

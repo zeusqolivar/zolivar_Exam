@@ -83,14 +83,20 @@ class loginPage: UIViewController {
     }
     @objc func loginButtonTapped() {
 
-        guard let mobileNumber = mobileNumberTextField.text else {
+        guard var mobileNumber = mobileNumberTextField.text else {
             return
+
         }
+
+        if !mobileNumber.isEmpty {
+            mobileNumber.removeFirst()
+        }
+        
         guard let mpin = mpinTextField.text else {
             return
         }
 
-        loginViewModel.login(mobile:"9123456789", mpin: "1234") { result in
+        loginViewModel.login(mobile:mobileNumber, mpin: mpin) { result in
             switch result {
             case .success(let data):
                 // Handle login success (parse data, update UI, etc.)
@@ -100,16 +106,20 @@ class loginPage: UIViewController {
                     let loginResponse = try decoder.decode(LoginResponse.self, from: data)
                     switch loginResponse.status{
                     case 200:
+
                         if let status = loginResponse.status{
                             print("Status Good")
                         }
                         DispatchQueue.main.async {
+                            
                             let vc = userPage()
                             vc.modalPresentationStyle = .fullScreen
                             self.present(vc, animated: true,completion: nil)
                         }
                     case 404:
-                        print("404 Not Found")
+                        DispatchQueue.main.async {
+                            self.showAlert(title: "Error", message: loginResponse.message)
+                        }
                     default: print("Unhandled Status Code")
                     }
                 } catch {

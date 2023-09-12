@@ -24,7 +24,7 @@
 		E5EBBCA92AA84DCA00118AAC /* mainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCA82AA84DCA00118AAC /* mainPage.swift */; };
 		E5EBBCAB2AA84F8E00118AAC /* loginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCAA2AA84F8E00118AAC /* loginPage.swift */; };
 		E5EBBCAD2AA84F9900118AAC /* registerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCAC2AA84F9900118AAC /* registerPage.swift */; };
-		E5EBBCB02AA899C800118AAC /* TextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCAF2AA899C800118AAC /* TextFieldExt.swift */; };
+		E5EBBCB02AA899C800118AAC /* Alert Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCAF2AA899C800118AAC /* Alert Reusable.swift */; };
 		E5EBBCB32AAA368100118AAC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EBBCB22AAA368100118AAC /* APIService.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,7 @@
 		E5EBBCA82AA84DCA00118AAC /* mainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainPage.swift; sourceTree = "<group>"; };
 		E5EBBCAA2AA84F8E00118AAC /* loginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPage.swift; sourceTree = "<group>"; };
 		E5EBBCAC2AA84F9900118AAC /* registerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerPage.swift; sourceTree = "<group>"; };
-		E5EBBCAF2AA899C800118AAC /* TextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExt.swift; sourceTree = "<group>"; };
+		E5EBBCAF2AA899C800118AAC /* Alert Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert Reusable.swift"; sourceTree = "<group>"; };
 		E5EBBCB22AAA368100118AAC /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				E56BB3A22AABF9E600A552FB /* CollectionViewCell.swift */,
-				E5EBBCAF2AA899C800118AAC /* TextFieldExt.swift */,
+				E5EBBCAF2AA899C800118AAC /* Alert Reusable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5EBBCB02AA899C800118AAC /* TextFieldExt.swift in Sources */,
+				E5EBBCB02AA899C800118AAC /* Alert Reusable.swift in Sources */,
 				E5EBBCA92AA84DCA00118AAC /* mainPage.swift in Sources */,
 				E56BB3A92AAFEF2D00A552FB /* rewardPageViewModel.swift in Sources */,
 				E5EBBC8F2AA848ED00118AAC /* AppDelegate.swift in Sources */,
