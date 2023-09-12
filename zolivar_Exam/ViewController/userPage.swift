@@ -12,6 +12,7 @@ class userPage: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     let referralCodeLabel = UILabel()
     let userViewModel = userPageViewModel()
 
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return rewardItem.count
     }
@@ -25,9 +26,19 @@ class userPage: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         print(rewardItem)
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        print("Selected Cell:  \(indexPath.row)")
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("SELECTED \(indexPath.row)")
+
+        DispatchQueue.main.async {
+            var viewModel = rewardPageViewModel(imageURL: self.rewardItem[indexPath.row].image, name: self.rewardItem[indexPath.row].name, description: self.rewardItem[indexPath.row].description)
+            let vc = rewardPage(viewModel: viewModel)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true,completion: nil)
+        }
+
+        
     }
+
     // UICollectionView
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
