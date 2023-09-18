@@ -11,11 +11,8 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
 
     func loadImage(fromURL imageURL: URL) {
-            // You can use a library like AlamofireImage or URLSession to load the image from the URL
-            // Here, we'll use URLSession for simplicity
             URLSession.shared.dataTask(with: imageURL) { [weak self] (data, _, error) in
                 guard let data = data, error == nil else {
-                    // Handle the error, e.g., show a placeholder image or log an error message
                     print("Error loading image: \(error?.localizedDescription ?? "Unknown Error")")
                     return
                 }
@@ -28,11 +25,9 @@ class CollectionViewCell: UICollectionViewCell {
                 }
             }.resume()
         }
-    
-    // Image view
+
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        // Configure imageView properties (e.g., content mode, background color, etc.)
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleToFill
@@ -41,10 +36,8 @@ class CollectionViewCell: UICollectionViewCell {
         return imageView
     }()
 
-    // Description label
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        // Configure label properties (e.g., font, text color, alignment, etc.)
         label.font = .systemFont(ofSize: 12)
         label.sizeToFit()
         return label
@@ -61,7 +54,6 @@ class CollectionViewCell: UICollectionViewCell {
         }
 
         private func configureUI() {
-            // Add and configure the image view
             contentView.addSubview(imageView)
             imageView.layer.cornerRadius = 10
             imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,9 +61,8 @@ class CollectionViewCell: UICollectionViewCell {
                 imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
                 imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
                 imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-                imageView.heightAnchor.constraint(equalToConstant: 150) // Adjust the height as needed
+                imageView.heightAnchor.constraint(equalToConstant: 150)
             ])
-            // Add and configure the description label
             contentView.addSubview(descriptionLabel)
             descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
             contentView.layer.borderColor = UIColor.black.cgColor
@@ -80,7 +71,7 @@ class CollectionViewCell: UICollectionViewCell {
 
 
             NSLayoutConstraint.activate([
-                descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 15), // Add spacing between image and label
+                descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 15),
                 descriptionLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 5),
                 descriptionLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor)
 

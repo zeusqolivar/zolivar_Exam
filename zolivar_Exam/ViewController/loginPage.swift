@@ -16,7 +16,7 @@ class loginPage: UIViewController {
     var backButton =  UIButton()
 
     let loginViewModel = loginPageViewModel()
-    
+    var userViewModel:userPageViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -25,16 +25,13 @@ class loginPage: UIViewController {
 
     func setupUI() {
         view.backgroundColor = .white
-        // Create Mobile Number Text Field
         mobileNumberTextField.placeholder = "Mobile Number (11 digits)"
         mobileNumberTextField.borderStyle = .roundedRect
         mobileNumberTextField.keyboardType = .numberPad
-        // Create MPIN Text Field
         mpinTextField.placeholder = "MPIN (4 digits)"
         mpinTextField.borderStyle = .roundedRect
         mpinTextField.keyboardType = .numberPad
         mpinTextField.isSecureTextEntry = true
-        // Create Login Button
         let loginButton = UIButton(type: .system)
         loginButton.setTitle("Login", for: .normal)
         loginButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
@@ -42,7 +39,6 @@ class loginPage: UIViewController {
         loginButton.backgroundColor = UIColor(red: 0.12, green: 0.53, blue: 0.90, alpha: 1.0)
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.layer.cornerRadius = 10
-        // Create Back Button
         let backButton = UIButton(type: .system)
         backButton.setTitle("Back", for: .normal)
         backButton.titleLabel?.font = UIFont.systemFont(ofSize: 24)
@@ -50,28 +46,19 @@ class loginPage: UIViewController {
         backButton.backgroundColor = UIColor(red: 0.12, green: 0.53, blue: 0.90, alpha: 1.0)
         backButton.setTitleColor(.white, for: .normal)
         backButton.layer.cornerRadius = 10
-        // StackView to arrange Mobile Number and MPIN text fields vertically
         let textFieldStackView = UIStackView(arrangedSubviews: [mobileNumberTextField, mpinTextField])
         textFieldStackView.axis = .vertical
         textFieldStackView.spacing = 20
         textFieldStackView.alignment = .fill
-        // Horizontal StackView to arrange Login and Back buttons
         let buttonStackView = UIStackView(arrangedSubviews: [backButton, loginButton])
         buttonStackView.axis = .horizontal
         buttonStackView.spacing = 20
         buttonStackView.distribution = .fillEqually
-
-
-        // StackView to arrange text fields and buttons vertically
         let stackView = UIStackView(arrangedSubviews: [textFieldStackView, buttonStackView])
         stackView.axis = .vertical
         stackView.spacing = 30
         stackView.alignment = .fill
-
-        // Add StackView to the main view
         view.addSubview(stackView)
-
-        // Set constraints to center the stack view
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -40),
@@ -99,7 +86,6 @@ class loginPage: UIViewController {
         loginViewModel.login(mobile:mobileNumber, mpin: mpin) { result in
             switch result {
             case .success(let data):
-                // Handle login success (parse data, update UI, etc.)
                 print("Login success. Data received: \(data)")
                 do {
                     let decoder = JSONDecoder()
@@ -111,7 +97,6 @@ class loginPage: UIViewController {
                             print("Status Good")
                         }
                         DispatchQueue.main.async {
-                            
                             let vc = userPage()
                             vc.modalPresentationStyle = .fullScreen
                             self.present(vc, animated: true,completion: nil)
@@ -129,7 +114,6 @@ class loginPage: UIViewController {
 
 
             case .failure(let error):
-                // Handle login failure (show alert, log error, etc.)
                 print("Login failed with error: \(error)")
             }
         }

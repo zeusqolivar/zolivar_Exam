@@ -33,7 +33,6 @@ class registerPage: UIViewController {
         setupTextField(mpinTextField, placeholder: "Mpin")
         setupTextField(confirmMpinTextField, placeholder: "Confirm Mpin")
 
-        // Set up buttons with styling
         backButton.setTitle("Back", for: .normal)
         backButton.backgroundColor = UIColor(red: 0.12, green: 0.53, blue: 0.90, alpha: 1.0)
         backButton.setTitleColor(.white, for: .normal)
@@ -46,17 +45,14 @@ class registerPage: UIViewController {
         registerButton.layer.cornerRadius = 10
         registerButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
 
-        // Add targets for button actions
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
 
-        // Create a stack view for horizontal arrangement
         let stackView = UIStackView(arrangedSubviews: [backButton, registerButton])
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 20
 
-        // Create a container view for the text fields and buttons
         let containerView = UIView()
         containerView.addSubview(firstNameTextField)
         containerView.addSubview(lastNameTextField)
@@ -65,7 +61,6 @@ class registerPage: UIViewController {
         containerView.addSubview(confirmMpinTextField)
         containerView.addSubview(stackView)
 
-        // Add constraints to position the elements
         containerView.translatesAutoresizingMaskIntoConstraints = false
         firstNameTextField.translatesAutoresizingMaskIntoConstraints = false
         lastNameTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -100,17 +95,14 @@ class registerPage: UIViewController {
             stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
         ])
 
-        // Add the container view to the main view
         view.addSubview(containerView)
 
-        // Set up constraints for the container view
         containerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 
-    // MARK: - Button Actions
 
     @objc func backButtonTapped() {
         dismiss(animated: true , completion: nil)
@@ -120,7 +112,6 @@ class registerPage: UIViewController {
 
     }
 
-    // MARK: - Helper Methods
 
     func setupTextField(_ textField: UITextField, placeholder: String) {
         textField.placeholder = placeholder

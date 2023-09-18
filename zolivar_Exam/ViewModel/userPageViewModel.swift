@@ -16,8 +16,8 @@ class userPageViewModel {
         self.networkService = networkService
     }
 
-    func getUserProfile(mobile: String, mpin: String, completion: @escaping (Result<Data, Error>) -> Void) {
-        networkService.login(mobile: mobile, mpin: mpin, completion: completion)
+    func getUserProfile(mobile: String, completion: @escaping (Result<Data, Error>) -> Void) {
+        networkService.getUserProfile(mobile: mobile, completion: completion)
     }
     func getRewards(completion: @escaping (Result<Data, Error>) -> Void) {
         networkService.getRewards(completion: completion)

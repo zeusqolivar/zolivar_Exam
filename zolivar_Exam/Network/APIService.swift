@@ -8,16 +8,12 @@
 import Foundation
 
 class NetworkService {
-
-    // Create a shared instance of NetworkService (Singleton)
     static let shared = NetworkService()
 
     private init() { }
 
-    // Define a base URL for your API
     private let baseURL = "http://localhost:3001/v1"
 
-    // Perform a POST request for login
     func login(mobile: String, mpin: String, completion: @escaping (Result<Data, Error>) -> Void) {
         let endpoint = "/login"
 
@@ -29,7 +25,6 @@ class NetworkService {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
 
-        // Add parameters as needed (e.g., username and password)
         let parameters: [String: Any] = [
             "mobile": mobile,
             "mpin": mpin
@@ -60,7 +55,6 @@ class NetworkService {
         task.resume()
     }
 
-    // Perform a POST request for registration
     func register(mobile: String, mpin: String, completion: @escaping (Result<Data, Error>) -> Void) {
         let endpoint = "/register"
 
@@ -71,8 +65,6 @@ class NetworkService {
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-
-        // Add parameters as needed (e.g., username and password)
         let parameters: [String: Any] = [
             "mobile": mobile,
             "mpin": mpin
@@ -103,7 +95,7 @@ class NetworkService {
         task.resume()
     }
 
-    func getUserProfile(mobile: String, mpin: String, completion: @escaping (Result<Data, Error>) -> Void) {
+    func getUserProfile(mobile: String, completion: @escaping (Result<Data, Error>) -> Void) {
         let endpoint = "/getuser"
 
         guard let url = URL(string: "\(baseURL)\(endpoint)") else {
@@ -114,10 +106,8 @@ class NetworkService {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
 
-        // Add parameters as needed (e.g., username and password)
         let parameters: [String: Any] = [
-            "mobile": mobile,
-            "mpin": mpin
+            "mobile": mobile
         ]
 
         do {
@@ -146,7 +136,7 @@ class NetworkService {
     }
 
     func getRewards(completion: @escaping (Result<Data, Error>) -> Void) {
-        let endpoint = "/getrewards" // Update the endpoint to match your API
+        let endpoint = "/getrewards"
 
         guard let url = URL(string: "\(baseURL)\(endpoint)") else {
             completion(.failure(NetworkError.invalidURL))
@@ -154,7 +144,7 @@ class NetworkService {
         }
 
         var request = URLRequest(url: url)
-        request.httpMethod = "POST" // Use POST method for fetching rewards
+        request.httpMethod = "POST"
 
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
@@ -174,7 +164,6 @@ class NetworkService {
     }
 }
 
-// Define custom error types for networking errors
 enum NetworkError: Error {
     case invalidURL
     case noData

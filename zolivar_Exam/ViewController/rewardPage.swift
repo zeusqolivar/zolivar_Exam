@@ -8,18 +8,17 @@ import UIKit
 
 class rewardPage: UIViewController {
 
-    var viewModel: rewardPageViewModel? // Replace with your view model type if needed
+    var viewModel: rewardPageViewModel?
 
     init(viewModel: rewardPageViewModel) {
-            self.viewModel = viewModel
-            super.init(nibName: nil, bundle: nil)
-        }
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
 
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
-    // Lazy variables
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -49,43 +48,35 @@ class rewardPage: UIViewController {
         view.backgroundColor = .white
 
 
-        // Create and configure the back button
         let backButton = UIButton(type: .system)
         backButton.setTitle("Back", for: .normal)
         backButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         backButton.translatesAutoresizingMaskIntoConstraints = false
 
-        // Add subviews to the view
         view.addSubview(backButton)
         view.addSubview(imageView)
         view.addSubview(nameLabel)
         view.addSubview(descriptionLabel)
 
-        // Set up constraints
         NSLayoutConstraint.activate([
-            // Back button constraints
             backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
 
-            // Image view constraints
             imageView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 20),
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 400), // Adjust width as needed
-            imageView.heightAnchor.constraint(equalToConstant: 400), // Adjust height as needed
+            imageView.widthAnchor.constraint(equalToConstant: 400),
+            imageView.heightAnchor.constraint(equalToConstant: 400),
 
-            // Name label constraints
             nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
-            // Description label constraints
             descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
 
-        // Load and set the image from a URL
         
         if let imageUrl = viewModel?.imageURL, let url = URL(string: imageUrl) {
             loadImage(fromURL: url)
@@ -95,8 +86,6 @@ class rewardPage: UIViewController {
         print("WHERE DATA NAME: \(viewModel?.name)")
 
     }
-
-    // Function to load and set an image from a URL
     func loadImage(fromURL url: URL) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -108,17 +97,13 @@ class rewardPage: UIViewController {
                 print("Invalid image data")
                 return
             }
-
-            // Update the UI on the main thread
             DispatchQueue.main.async {
                 self.imageView.image = image
             }
         }.resume()
     }
 
-    // Function to handle back button tap
     @objc func backButtonTapped() {
-        // Dismiss the current view controller
         dismiss(animated: true)
     }
 }

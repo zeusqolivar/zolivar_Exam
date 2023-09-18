@@ -44,21 +44,17 @@ class userPage: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     // UICollectionView
     var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical // Set the scroll direction to horizontal
-        layout.minimumInteritemSpacing = 0 // Add spacing between items (adjust as needed)
-        // Calculate the item size based on the screen size
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 0
         let screenWidth = UIScreen.main.bounds.width
-        let itemWidth = screenWidth - 20 // 20 points spacing on both sides
+        let itemWidth = screenWidth - 20
         layout.itemSize = CGSize(width: itemWidth, height: 200)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        // Configure collectionView properties and register cell class here
         return collectionView
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Configure labels
         configureLabels()
-        // Configure and add the collectionView
         configureCollectionView()
         userViewModel.getRewards{ result in
             switch result {
@@ -91,12 +87,10 @@ class userPage: UIViewController, UICollectionViewDataSource, UICollectionViewDe
 
 
     private func configureLabels() {
-        // Create a vertical stack view
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.alignment = .center // Center labels vertically
+        stackView.alignment = .center
         stackView.spacing = 0
-        // Configure label properties (e.g., font, text color, etc.)
         view.backgroundColor = .systemPink
         nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
         nameLabel.textColor = .black
@@ -107,13 +101,10 @@ class userPage: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         referralCodeLabel.font = UIFont.boldSystemFont(ofSize: 20)
         referralCodeLabel.textColor = .black
         referralCodeLabel.text = "qwe123"
-        // Add labels to the stack view
         stackView.addArrangedSubview(nameLabel)
         stackView.addArrangedSubview(mobileLabel)
         stackView.addArrangedSubview(referralCodeLabel)
-        // Add the stack view to the view
         view.addSubview(stackView)
-        // Set stack view constraints (use Auto Layout)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),

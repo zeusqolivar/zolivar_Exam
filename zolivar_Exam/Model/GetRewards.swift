@@ -12,8 +12,6 @@ struct RewardItem: Codable {
     let name: String
     var description: String
     let image: String
-
-  
 }
 
 struct DataList: Codable {
